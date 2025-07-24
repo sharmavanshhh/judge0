@@ -1,6 +1,6 @@
 class InfoController < ApplicationController
   @@license ||= File.read("LICENSE")
-  @@isolate ||= `isolate --version`
+  # @@isolate ||= `isolate --version`
 
   def system_info
     render json: SystemInfo.sys_info
