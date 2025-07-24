@@ -37,7 +37,10 @@ WORKDIR /api
 COPY . .
 
 # Install Ruby dependencies
-RUN gem install bundler -v 2.4.22 && bundle _2.4.22_ install
+# Install Ruby dependencies
+RUN gem install bundler \
+    && gem install mini_portile2 -v 2.8.5 \
+    && bundle install
 
 # Set ownership
 RUN chown -R judge0:judge0 /api && chmod +x /api/scripts/server
