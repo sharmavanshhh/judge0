@@ -15,6 +15,7 @@ Bundler.require(*Rails.groups)
 
 module Judge0API
   class Application < Rails::Application
+    config.eager_load_paths -= %W(#{config.root}/app/models)
     config.api_only = true
     config.generators do |g|
       g.factory_girl test_framework: :rspec
