@@ -43,7 +43,7 @@
 #  execution_host                             :string
 #
 
-class Submission < ApplicationRecord
+class Submission
   validates :source_code, presence: true, unless: -> { is_project }
   validates :source_code, absence: true, if: -> { is_project }
   validates :additional_files, presence: true, if: -> { is_project }
