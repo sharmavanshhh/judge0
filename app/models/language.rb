@@ -10,7 +10,7 @@
 #  is_archived :boolean          default(FALSE)
 #
 
-class Language < ApplicationRecord
+class Language
   validates :name, presence: true
   validates :source_file, :run_cmd, presence: true, unless: -> { is_project }
   default_scope { where(is_archived: false).order(name: :asc) }
