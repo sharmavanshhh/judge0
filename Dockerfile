@@ -37,10 +37,10 @@ WORKDIR /api
 COPY . .
 
 # Install Ruby dependencies
-# Install Ruby dependencies
 RUN gem install bundler -v 2.4.22 \
-    && gem install mini_portile2 \
+    && gem install mini_portile2 -v 2.8.5 \
     && bundle _2.4.22_ install
+
 
 
 # Set ownership
